@@ -17,7 +17,7 @@
 <div class='well'>
 <h1>Make a Joke</h1>
 <br/>
-<form method=POST action='joke_post' onsubmit='return validate()'>
+<form method=POST action='http://api.icndb.com/jokes/random' onsubmit='return validate()'>
 		<div class='form-group row'>
 		 	<div class='col-xs-4'>
 				<label for='firstName'>First Name : </label>
@@ -36,7 +36,7 @@
 </form>
 
 <br/><br/>
-<a href='/list'>List all students</a>
+
 </div>
 
 </body>

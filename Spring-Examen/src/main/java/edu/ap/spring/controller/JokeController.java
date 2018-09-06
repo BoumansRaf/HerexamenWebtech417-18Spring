@@ -20,20 +20,29 @@ public class JokeController {
        
    @RequestMapping("/joke")
    public String joke() {
-	   return "";
+	   return "joke";
    }
-		   
-   @PostMapping("/joke_post")
+
+    @RequestMapping("/joke_post")
+    public String joke_post() {
+        return "";
+    }
+
+   @PostMapping("/joke")
    public String joke_post(@RequestParam("firstName") String firstName,
                            @RequestParam("lastName") String lastName,
-                           @RequestParam("grade") String joke,
-                           Model model) {
+                           Model model
+                           ) {
        model.addAttribute("firstName", firstName);
        model.addAttribute("lastName", lastName);
+
+       String joke  = "";
        model.addAttribute("joke", joke);
 
        repository.save(new Joke(firstName, lastName, joke));
-	   return "";
+
+
+	   return joke;
    }
    
    @RequestMapping("/")
